@@ -1,0 +1,15 @@
+node_modules/
+nest-temp/
+dist/
+.test-dist/
+coverage/
+*.tsbuildinfo
+*.log
+.env
+.env.*
+!.env.example
+
+# Conserver les captures originales localement ; publier uniquement les versions masquées.
+/docs/screenshot/*.png
+!/docs/screenshot/liste-masquee.png
+!/docs/screenshot/suppression-masquee.png
