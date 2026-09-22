@@ -13,7 +13,13 @@ Exercice réalisé progressivement à partir de [l’énoncé](Exo-Api-Todo.md),
 
 ## Installation locale — Windows CMD
 
-Prérequis : Node.js 24, npm et PostgreSQL (projet testé avec PostgreSQL 18). Les versions des dépendances sont verrouillées dans `package-lock.json`.
+Prérequis :
+
+- Node.js **24.19.0 ou version ultérieure**.
+- npm **11.19.1 ou version ultérieure**.
+- PostgreSQL pour démarrer l’API complète (projet testé avec PostgreSQL 18).
+
+Les versions effectivement vérifiées sont Node.js **24.19.0** et npm **11.19.1**. Les versions minimales sont déclarées dans `package.json` (`engines`), et les dépendances sont verrouillées dans `package-lock.json`. Les versions ultérieures ne sont pas toutes testées.
 
 Depuis le dossier du projet :
 
@@ -111,6 +117,18 @@ flowchart LR
 `UsersModule` exporte `UsersService` pour `AuthModule`. `TodoModule` importe `AuthModule` pour accéder au service JWT et enregistre le middleware sur `TodoController`. Le guard protège le controller entier.
 
 ## Vérifications
+
+Pour reproduire les contrôles depuis un clone propre, sans `.env` ni PostgreSQL :
+
+```cmd
+git clone https://github.com/MikeTD24/Exo-Nestjs-ApiTodo.git verification-exo-todo
+cd verification-exo-todo
+node --version
+npm --version
+npm ci
+```
+
+Puis exécuter :
 
 ```cmd
 npm run typecheck
